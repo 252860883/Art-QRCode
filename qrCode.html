@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=0.5,maximum-scale=1,minimum-scale=1,user-scalable=no" />
+    <title></title>
+    <script src="qrcode.js"></script>
+    <style>
+        #main{
+            width: 100%;
+            text-align: center;
+        }
+        #img{
+            height: 480px;
+            width: 400px;
+            background-image: url('background.jpg');
+            background-size: 100%;
+            display: inline-block;
+            position: relative;
+        }
+        #inputText{
+            margin-top: 10px;
+            height: 30px;
+            width: 60%;
+            max-width: 300px;
+            border: 2px solid #666666;
+            border-radius: 5px;
+            clear: both;
+        }
+        #submit{
+            height: 35px;
+            width: 30%;
+            max-width: 70px;
+            background: #666;
+            color: #fff;
+            border: 2px solid #666;
+            border-radius: 5px;
+        }
+        #qrcode{
+            position: absolute;
+            top: 198px;
+            left: 145px;
+            height: 135px;
+            width: 135px;
+            transform: rotate(-7.8deg);
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+<div id="main">
+    <div id="img">
+        <div id="qrcode"></div>
+    </div>
+    <br>
+    <input id="inputText" type="text">
+    <input id="submit" type="submit" value="确定">
+</div>
+
+
+<script>
+    document.getElementById('submit').onclick= function () {
+
+       document.getElementById('qrcode').innerHTML='';
+        var text=document.getElementById('inputText').value;
+        
+        var qrcode = new QRCode('qrcode', {
+            text: text,
+            width:135,
+            height:135,
+            colorDark : '#6e3805',
+            colorLight : '#fff',
+            correctLevel : QRCode.CorrectLevel.H
+        });
+    }
+
+</script>
+</body>
+</html>
