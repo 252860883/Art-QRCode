@@ -1,5 +1,5 @@
 # Art-QRCode
-## Producing colorful QRCode tool
+## Producing Art-QRCode tool
 1.Input your content ,click the button.  
 2.then  a colorful QRCode will be output.  
 3.So,please press long this picture to save.
